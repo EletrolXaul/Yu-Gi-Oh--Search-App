@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cerca Carte Yu-Gi-Oh!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Cerca Carte Yu-Gi-Oh!</h1>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Inserisci il nome della carta..."
+    />
+    <div id="cardContainer"></div>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        loadAllCards();
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", filterCards);
+      });
+    </script>
+  </body>
+</html>
