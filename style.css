@@ -17,7 +17,7 @@ h1 {
 
 #searchInput {
     width: 300px;
-    padding: 8px;
+    padding: 10px;
     margin: 20px 0;
     font-size: 16px;
     border: 1px solid #444;
@@ -44,6 +44,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s;
     text-align: center;
+    cursor: pointer; /* Cursore puntatore */
 }
 
 .card:hover {
@@ -67,3 +68,99 @@ h1 {
     margin: 5px 0;
     color: #cccccc;
 }
+
+/* Stili per la Modal */
+.modal {
+    display: none; /* Inizialmente nascosta */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo semi-trasparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Titolo della modal */
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcb05;
+    margin-bottom: 15px;
+}
+
+/* Immagine adattiva nella modal */
+.modal-image {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Contenitore per le informazioni */
+.modal-info {
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Testo descrittivo nella modal */
+.modal-info p {
+    margin: 8px 0;
+}
+
+/* Descrizione della carta nella modal */
+.modal-description {
+    margin-top: 15px;
+    font-style: italic;
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Box della Modal */
+.modal-content {
+    background-color: #282828;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden; /* Evita barre di scorrimento */
+}
+
+/* Immagine nella Modal */
+.modal-content img {
+    width: 100%;
+    max-height: 50vh; /* Adatta l'altezza dell'immagine */
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Icona di chiusura della Modal */
+.close {
+    color: #ffcb05;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
