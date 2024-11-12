@@ -35,25 +35,46 @@ function loadMoreCards() {
 }
 
 function openModal(card) {
-  modalCardContent.innerHTML = `
-      <h2 class="modal-title">${card.name}</h2>
-      <img class="modal-image" src="${card.card_images[0].image_url}" alt="${
+  const modal = document.getElementById("cardModal");
+  const modalContent = document.getElementById("modalCardContent");
+
+  modalContent.innerHTML = `
+      <h2>${card.name}</h2>
+      <img src="${card.card_images[0].image_url}" alt="${
     card.name
-  }">
-      <div class="modal-info">
-        <p><strong>Tipo:</strong> ${card.type}</p>
-        ${card.atk ? `<p><strong>ATK:</strong> ${card.atk}</p>` : ""}
-        ${card.def ? `<p><strong>DEF:</strong> ${card.def}</p>` : ""}
-        ${card.race ? `<p><strong>Razza:</strong> ${card.race}</p>` : ""}
+  }" class="modal-card-image">
+      
+      <div class="card-details-grid">
+        <div class="detail-item"><i class="fas fa-dna"></i> Tipo: ${
+          card.type
+        }</div>
         ${
-          card.attribute
-            ? `<p><strong>Attributo:</strong> ${card.attribute}</p>`
+          card.atk
+            ? `<div class="detail-item"><i class="fas fa-fist-raised"></i> ATK: ${card.atk}</div>`
             : ""
         }
-        <p class="modal-description">${card.desc ? card.desc : ""}</p>
+        ${
+          card.def
+            ? `<div class="detail-item"><i class="fas fa-shield-alt"></i> DEF: ${card.def}</div>`
+            : ""
+        }
+        ${
+          card.race
+            ? `<div class="detail-item"><i class="fas fa-paw"></i> Razza: ${card.race}</div>`
+            : ""
+        }
+        ${
+          card.attribute
+            ? `<div class="detail-item"><i class="fas fa-gem"></i> Attributo: ${card.attribute}</div>`
+            : ""
+        }
       </div>
+      <div class="card-desc">${
+        card.desc ? card.desc : "Nessuna descrizione disponibile."
+      }</div>
     `;
-  cardModal.style.display = "flex"; // Mostra la modal come flex per centrarla
+
+  modal.style.display = "flex"; // Mostra la modal centrata
 }
 
 // Funzione per chiudere la modal
